@@ -29,8 +29,9 @@ class MaintenanceModeMiddleware(object):
             return None
 
         # Allow access if the user doing the request is logged in and a
-        # staff member.
-        if hasattr(request, 'user') and request.user.is_staff:
+        # superuser.
+        ALLOW_SU = getattr(settings, 'MAINTENANCE_ALLOW_SU', False)
+        if ALLOW_SU and hasattr(request, 'user') and request.user.is_superuser:
             return None
 
         # Check if a path is explicitly excluded from maintenance mode
