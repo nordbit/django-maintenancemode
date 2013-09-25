@@ -50,7 +50,7 @@ class MaintenanceModeMiddleware(object):
             return None
 
         # update list of ignored urls with ignored url from model
-        for ignore_url in enabled_maintenance_mode.ignored_urls:
+        for ignore_url in enabled_maintenance_mode.ignored_urls.all():
             IGNORE_URLS.append(re.compile(ignore_url.url))
 
         # Check if a path is explicitly excluded from maintenance mode
