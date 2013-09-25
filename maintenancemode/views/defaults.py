@@ -15,6 +15,7 @@ def temporary_unavailable(request, template_name='503.html'):
         request_path
             The path of the requested URL (e.g., '/app/pages/bad_page/')
     """
-    t = loader.get_template(template_name) # You need to create a 503.html template.
+    # You need to create a 503.html template.
+    t = loader.get_template(template_name)
     context = RequestContext(request, {'request_path': request.path})
     return http.HttpResponseTemporaryUnavailable(t.render(context))

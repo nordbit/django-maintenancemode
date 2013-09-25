@@ -2,6 +2,7 @@
 # coding: utf-8
 
 import re
+
 import django
 from django.conf import settings
 from django.core import urlresolvers
@@ -12,8 +13,8 @@ if django.VERSION[:2] <= (1, 3):
 else:
     from django.conf import urls
 
-from maintenancemode.conf.settings.defaults import (MAINTENANCE_MODE,
-                                                    MAINTENANCE_IGNORE_URLS)
+from maintenancemode.conf.settings.defaults import (
+    MAINTENANCE_MODE, MAINTENANCE_IGNORE_URLS)
 
 urls.handler503 = 'maintenancemode.views.defaults.temporary_unavailable'
 urls.__all__.append('handler503')
