@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# coding: utf-8
+
 from django.template import RequestContext, loader
 
 from maintenancemode import http
