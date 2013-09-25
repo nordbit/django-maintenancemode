@@ -1,15 +1,14 @@
+#!/usr/bin/env python
+# coding: utf-8
+
 import django
 import os
 
 TEST_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 if django.VERSION[:2] < (1, 3):
-    DATABASE_ENGINE = 'sqlite3'           # 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-    DATABASE_NAME = 'testproject.db'             # Or path to database file if using sqlite3.
-    DATABASE_USER = ''             # Not used with sqlite3.
-    DATABASE_PASSWORD = ''         # Not used with sqlite3.
-    DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
-    DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+    DATABASE_ENGINE = 'sqlite3'
+    DATABASE_NAME = 'testproject.db'
 else:
     DATABASES = {
         'default': {
@@ -20,7 +19,8 @@ else:
 
 SITE_ID = 1
 
-TEST_TEMPLATE_DIR = os.path.join(TEST_ROOT, os.pardir, os.pardir, 'tests', 'templates')
+TEST_TEMPLATE_DIR = \
+    os.path.join(TEST_ROOT, os.pardir, os.pardir, 'tests', 'templates')
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
