@@ -10,7 +10,7 @@ class IgnoredUrls(models.Model):
 
     class Meta:
         verbose_name = u"ignored url pattern"
-        verbose_name_plural = u"ignored urls patterns"
+        verbose_name_plural = u"ignored url patterns"
 
     def __unicode__(self):
         return self.url
@@ -25,7 +25,7 @@ class MaintenanceMode(models.Model):
 
     class Meta:
         verbose_name = u"maintenance mode"
-        verbose_name_plural = u"maintenances mode"
+        verbose_name_plural = u"maintenance modes"
 
     def __unicode__(self):
         return u"%s maintenance mode, superuser access %s, %s urls ignored" % \
