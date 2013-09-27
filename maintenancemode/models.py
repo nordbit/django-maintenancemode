@@ -10,7 +10,7 @@ class IgnoredUrls(models.Model):
 
     class Meta:
         verbose_name = u"ignored url pattern"
-        verbose_name_plural = u"ignored urls patterns"
+        verbose_name_plural = u"ignored url patterns"
 
     def __unicode__(self):
         return self.url
@@ -21,11 +21,11 @@ class MaintenanceMode(models.Model):
         verbose_name=u"Enable maintenance mode?", default=False)
     allow_superuser = models.BooleanField(
         verbose_name=u"Allow superuser to enter site?", default=True)
-    ignored_urls = models.ManyToManyField(IgnoredUrls)
+    ignored_urls = models.ManyToManyField(IgnoredUrls, blank=True, null=True)
 
     class Meta:
         verbose_name = u"maintenance mode"
-        verbose_name_plural = u"maintenances mode"
+        verbose_name_plural = u"maintenance modes"
 
     def __unicode__(self):
         return u"%s maintenance mode, superuser access %s, %s urls ignored" % \
