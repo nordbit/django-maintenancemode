@@ -28,7 +28,7 @@ class MaintenanceMode(models.Model):
         verbose_name_plural = u"maintenances mode"
 
     def __unicode__(self):
-        return u"%s maintenance mode, %s superuser access, %s urls ignored" % \
+        return u"%s maintenance mode, superuser access %s, %s urls ignored" % \
             ("Enabled" if self.enable_maintenance_mode else "Disabled",
              "allowed" if self.allow_superuser else "disallowed",
              self.ignored_urls.count())
