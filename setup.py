@@ -29,18 +29,22 @@ setup(
     author_email='remco@maykinmedia.nl',
     license="BSD",
     platforms=["any"],
-    url='https://github.com/shanx/django-maintenancemode',
+    url='https://github.com/21strun/django-maintenancemode',
     packages=[
         'maintenancemode',
         'maintenancemode.conf',
         'maintenancemode.conf.settings',
         'maintenancemode.conf.urls',
+        'maintenancemode.management',
+        'maintenancemode.management.commands',
+        'maintenancemode.management.commands.maintenance',
         'maintenancemode.tests',
         'maintenancemode.views',
     ],
     package_data={
         'maintenancemode': [
             'tests/templates/503.html',
+            'fixtures/initial_data.json',
         ],
     },
     classifiers=[
