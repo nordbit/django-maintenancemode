@@ -37,7 +37,6 @@ setup(
         'maintenancemode.conf.urls',
         'maintenancemode.management',
         'maintenancemode.management.commands',
-        'maintenancemode.management.commands.maintenance',
         'maintenancemode.tests',
         'maintenancemode.views',
     ],
