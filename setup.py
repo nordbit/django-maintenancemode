@@ -7,12 +7,12 @@ here = os.path.abspath(os.path.dirname(__file__))
 
 
 def read(*parts):
-    return codecs.open(os.path.join(here, *parts)).read()
+    return codecs.open(os.path.join(here, *parts), 'rb').read().decode('utf-8')
 
 
 def find_version(*path_parts):
     version_file = read(*path_parts)
-    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
+    version_match = re.search("^__version__ = ['\"]([^'\"]*)['\"]",
                               version_file, re.M)
     if version_match:
         return version_match.group(1)
